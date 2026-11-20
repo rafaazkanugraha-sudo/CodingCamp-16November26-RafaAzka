@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="dashboard">
+      <section class="widget widget-greeting">
+        <div id="clock"></div>
+        <div id="date"></div>
+        <div id="greeting"></div>
+        <input type="text" id="name-input" maxlength="50" placeholder="Your name" />
+        <button id="name-save">Save Name</button>
+      </section>
+      <!-- Timer widget -->
+      <section class="widget widget-timer">
+        <h2>Pomodoro Timer</h2>
+        <div id="timer-display">25:00</div>
+        <div>
+          <label for="duration-input">Duration (min):</label>
+          <input type="number" id="duration-input" min="1" max="120" value="25" />
+          <button id="duration-save">Set</button>
+          <span id="duration-error" class="error-msg"></span>
+        </div>
+        <div>
+          <button id="timer-start">Start</button>
+          <button id="timer-stop" disabled>Stop</button>
+          <button id="timer-reset">Reset</button>
+        </div>
+        <div id="timer-alert" class="hidden">Time is up!</div>
+      </section>
+
+      <!-- Todo list widget -->
+      <section class="widget widget-todo">
+        <h2>To-Do List</h2>
+        <div>
+          <input type="text" id="task-input" maxlength="200" placeholder="New task…" />
+          <button id="task-add">Add</button>
+        </div>
+        <span id="task-storage-error" class="error-msg"></span>
+        <ul id="task-list"></ul>
+      </section>
+
+      <!-- Quick links widget -->
+      <section class="widget widget-links">
+        <h2>Quick Links</h2>
+        <div>
+          <input type="text" id="link-label-input" maxlength="100" placeholder="Label" />
+          <span id="link-label-error" class="error-msg"></span>
+        </div>
+        <div>
+          <input type="text" id="link-url-input" maxlength="2048" placeholder="https://…" />
+          <span id="link-url-error" class="error-msg"></span>
+        </div>
+        <button id="link-add">Add Link</button>
+        <span id="link-max-error" class="error-msg"></span>
+        <div id="links-container"></div>
+      </section>
+
+      <section class="widget widget-theme">
+        <button id="theme-toggle" aria-label="Switch to Dark Mode">Switch to Dark Mode</button>
+      </section>
+    </main>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
